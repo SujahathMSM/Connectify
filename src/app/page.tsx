@@ -1,11 +1,17 @@
+import ModeToggle from "@/components/ModeToggle";
+import { Button } from "@/components/ui/button";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-
+import { MailOpen } from "lucide-react";
 export default function Home() {
   return (
     <div>
+      <ModeToggle />
       <SignedOut>
         <SignInButton mode="modal">
-          <button className="bg-red-500">Sign in</button>
+          <Button>
+            <MailOpen />
+            Sign In
+          </Button>
         </SignInButton>
       </SignedOut>
       <SignedIn>
